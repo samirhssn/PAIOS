@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "service",
+    "allowed_actions",
+    "blocked_actions",
+    "confirmation_required_for",
+    "hard_block"
+  ],
+  "properties": {
+    "service": {
+      "type": "string",
+      "enum": ["gmail", "google_calendar"]
+    },
+    "allowed_actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "gmail_read",
+          "gmail_draft",
+          "calendar_read",
+          "calendar_create"
+        ]
+      }
+    },
+    "blocked_actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "gmail_read",
+          "gmail_draft",
+          "calendar_read",
+          "calendar_create"
+        ]
+      }
+    },
+    "confirmation_required_for": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "gmail_read",
+          "gmail_draft",
+          "calendar_read",
+          "calendar_create"
+        ]
+      }
+    },
+    "hard_block": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}
